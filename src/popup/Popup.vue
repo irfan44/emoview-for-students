@@ -2,6 +2,7 @@
 import { useStore } from 'vuex'
 import { useAuth0 } from '@auth0/auth0-vue'
 import { computed, ref } from 'vue'
+import { Switch } from '@headlessui/vue'
 import axios from 'axios'
 
 const { loginWithPopup, isLoading, isAuthenticated, getAccessTokenSilently, logout } = useAuth0()

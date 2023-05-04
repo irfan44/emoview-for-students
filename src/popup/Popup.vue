@@ -171,51 +171,6 @@ const handleLeaveMeeting = () => {
       </div>
     </div>
   </main>
-  <!--    <main>-->
-  <!--        <h5 class="text-h5 font-weight-bold text-center text-blue">Emoview Extension</h5>-->
-  <!--        <div v-if="isLoading && !isMeetingCode" class="text-center mt-4 mb-2">-->
-  <!--            <v-progress-circular indeterminate></v-progress-circular>-->
-  <!--        </div>-->
-  <!--        <div v-else>-->
-  <!--            <div v-if="isAuthenticated && !isMeetingCode">-->
-  <!--                <form ref="form" @submit.prevent="handleEnterCode">-->
-  <!--                    <v-text-field-->
-  <!--                            v-model="newMeetingCode"-->
-  <!--                            label="Enter meeting code"-->
-  <!--                            variant="solo"-->
-  <!--                            hide-details="true"-->
-  <!--                    ></v-text-field>-->
-  <!--                    <v-btn class="text-capitalize" type="submit" :disabled="!newMeetingCode" block>Enter Meeting</v-btn>-->
-  <!--                </form>-->
-  <!--            </div>-->
-  <!--            <div v-if="isAuthenticated && isMeetingCode">-->
-  <!--                <h6 v-if="isAuthenticated" class="text-body-1 mt-4 mb-2">Hello, {{ meetingCode?.name }}</h6>-->
-  <!--                <v-switch-->
-  <!--                        v-model="isStart"-->
-  <!--                        :label="`Recognition ${isStart ? 'On' : 'Off'}`"-->
-  <!--                        class="mb-2"-->
-  <!--                        color="blue"-->
-  <!--                        inset-->
-  <!--                        readonly-->
-  <!--                        hide-details="true"-->
-  <!--                        @click="store.dispatch('user/toggleIsStart')"-->
-  <!--                ></v-switch>-->
-  <!--                <h6>{{ meetingCode?.name }}</h6>-->
-  <!--                <v-btn class="text-capitalize" block @click="handleChangeNameToggle">Change Name</v-btn>-->
-  <!--                <form v-if="isChangeName" ref="form" @submit.prevent="handleUpdateName">-->
-  <!--                    <v-text-field-->
-  <!--                            v-model="newName"-->
-  <!--                            label="Enter your name"-->
-  <!--                            variant="solo"-->
-  <!--                            hide-details="true"-->
-  <!--                    ></v-text-field>-->
-  <!--                    <v-btn class="text-capitalize" type="submit" :disabled="!newName" block>Save</v-btn>-->
-  <!--                </form>-->
-  <!--                <v-btn class="text-capitalize" block @click="handleLogout">Logout</v-btn>-->
-  <!--            </div>-->
-  <!--            <v-btn v-else class="text-capitalize" block @click="handleLogin">Login</v-btn>-->
-  <!--        </div>-->
-  <!--    </main>-->
 </template>
 
 <style scoped>

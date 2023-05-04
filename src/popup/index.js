@@ -32,10 +32,7 @@ createApp(App)
       components,
       directives,
       theme: {
-        defaultTheme: 'customTheme',
-        themes: {
-          customTheme,
-        }
+        disable: true
       },
     }),
   )

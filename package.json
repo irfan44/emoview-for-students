@@ -1,0 +1,40 @@
+{
+  "name": "fer-student-rest",
+  "version": "1.0.0",
+  "author": "derrydwi",
+  "description": "An extension to recognize emotions on Google Meet using REST API",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "fer",
+    "chrome-extension",
+    "vue",
+    "vite",
+    "rest"
+  ],
+  "engines": {
+    "node": ">=14.18.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "fmt": "prettier --write '**/*.{vue,js,json,css,scss,md}'"
+  },
+  "dependencies": {
+    "@auth0/auth0-vue": "^1.0.2",
+    "axios": "^1.1.2",
+    "face-api.js": "^0.22.2",
+    "socket.io-client": "^4.5.2",
+    "vue": "^3.2.37",
+    "vuetify": "^3.0.1",
+    "vuex": "^4.0.2",
+    "vuex-persistedstate": "^4.1.0"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^1.0.12",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "prettier": "^2.7.1",
+    "vite": "^2.9.13"
+  }
+}

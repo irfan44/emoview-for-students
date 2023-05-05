@@ -1,7 +1,7 @@
 {
   "name": "fer-student-rest",
-  "version": "1.0.0",
-  "author": "derrydwi",
+  "version": "2.0.0",
+  "author": "irfan44 <irfannmuhajir@upi.edu>",
   "description": "An extension to recognize emotions on Google Meet using REST API",
   "type": "module",
   "license": "MIT",

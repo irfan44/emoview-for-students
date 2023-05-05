@@ -2,7 +2,6 @@
 import { useStore } from 'vuex'
 import { useAuth0 } from '@auth0/auth0-vue'
 import { computed, ref } from 'vue'
-import { Switch } from '@headlessui/vue'
 import axios from 'axios'
 
 const { loginWithPopup, isLoading, isAuthenticated, getAccessTokenSilently, logout } = useAuth0()
@@ -91,16 +90,16 @@ const handleLeaveMeeting = () => {
     </div>
     <div v-else>
       <div v-if="!isAuthenticated">
-        <button @click="handleLogin">Login</button>
-        <!-- <v-btn
+        <v-btn
           class="text-capitalize"
           variant="flat"
           color="primary"
           rounded="lg"
           block
           @click="handleLogin"
-          >Login</v-btn
-        > -->
+          >
+            Login
+        </v-btn>
       </div>
       <div v-else>
         <div v-if="!meetingCode">
@@ -110,24 +109,26 @@ const handleLeaveMeeting = () => {
               label="Enter meeting PIN"
               variant="solo"
               hide-details="true"
+              rounded="lg"
+              maxlength="17"
             ></v-text-field>
-            <button :disabled="!newMeetingCode">Join Meeting</button>
-            <!-- <v-btn
+            <v-btn
               class="mt-4 text-capitalize"
               variant="flat"
               type="submit"
               color="primary"
               rounded="lg"
-              :disabled="!newMeetingCode"
+              :disabled="newMeetingCode.length !== 17"
               block
-              >Join Meeting</v-btn
-            > -->
+              >
+                Join Meeting
+            </v-btn>
           </form>
         </div>
         <div v-else>
           <h6 v-if="isAuthenticated" class="text-body-1 mb-2">Hello, {{ user?.name }}</h6>
           <h6 v-if="isAuthenticated" class="text-body-1">Meeting PIN : {{ meetingCode }}</h6>
-          <!-- <v-switch
+          <v-switch
             v-model="isStart"
             :label="`Recognition ${isStart ? 'On' : 'Off'}`"
             class="my-4"
@@ -136,40 +137,27 @@ const handleLeaveMeeting = () => {
             readonly
             hide-details="true"
             @click="store.dispatch('user/toggleIsStart')"
-          ></v-switch> -->
-          <Switch
-            v-model="isStart"
-            :class="isStart ? 'bg-teal-900' : 'bg-teal-700'"
-            class="relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-            @click="store.dispatch('user/toggleIsStart')"
-          >
-            <span class="sr-only">Use setting</span>
-            <span
-              aria-hidden="true"
-              :class="isStart ? 'translate-x-9' : 'translate-x-0'"
-              class="pointer-events-none inline-block h-[34px] w-[34px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out"
-            />
-          </Switch>
-          <button class="w-full" @click="handleLeaveMeeting">Leave Meeting</button>
-          <button class="w-full" @click="handleLogout">Logout</button>
-          <!-- <v-btn
+          ></v-switch>
+          <v-btn
             class="text-capitalize"
-            variant="outlined"
+            variant="flat"
             color="error"
             rounded="lg"
             block
             @click="handleLeaveMeeting"
-            >Leave Meeting</v-btn
-          > -->
-          <!-- <v-btn
+            >
+              Leave Meeting
+          </v-btn>
+          <v-btn
             class="text-capitalize"
-            variant="text"
+            variant="outlined"
             color="primary"
             rounded="lg"
             block
             @click="handleLogout"
-            >Logout</v-btn
-          > -->
+            >
+              Logout
+          </v-btn>
         </div>
       </div>
     </div>

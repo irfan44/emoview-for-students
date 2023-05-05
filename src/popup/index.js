@@ -14,6 +14,7 @@ const customTheme = {
   colors: {
     primary: '#0066DA',
     'primary-darken-1': '#0066DA',
+    error: '#ff4d4f'
   }
 }
 
@@ -32,7 +33,10 @@ createApp(App)
       components,
       directives,
       theme: {
-        disable: true
+        defaultTheme: 'customTheme',
+        themes: {
+          customTheme,
+        }
       },
     }),
   )

@@ -3,6 +3,7 @@ import { useStore } from 'vuex'
 import { useAuth0 } from '@auth0/auth0-vue'
 import { computed, ref } from 'vue'
 import axios from 'axios'
+import { AUTH0_APP_DOMAIN } from "../constants.js";
 
 const { loginWithPopup, isLoading, isAuthenticated, getAccessTokenSilently, logout } = useAuth0()
 const store = useStore()
@@ -18,7 +19,7 @@ const handleLogin = () => {
   loginWithPopup({ prompt: 'login' }).then(async () => {
     const token = await getAccessTokenSilently()
 
-    const userinfo = await axios.get(`https://dev-r16wa2rubknr8uv5.us.auth0.com/userinfo`, {
+    const userinfo = await axios.get(`https:/${AUTH0_APP_DOMAIN}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -83,7 +84,7 @@ const handleLeaveMeeting = () => {
   <main class="pa-4">
     <div class="d-flex flex-row align-center mb-4">
       <img src="../assets/logo.png" width="30" height="30" />
-      <h5 class="ml-2 text-h6 font-weight-bold text-center">Emoview for Students</h5>
+      <h5 class="ml-2 text-h6 font-weight-bold text-center">EmoSync for Students</h5>
     </div>
     <div v-if="isLoading" class="text-center mb-2">
       <v-progress-circular color="primary" indeterminate></v-progress-circular>

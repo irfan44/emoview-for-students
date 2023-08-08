@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {BE_ENDPOINT} from './constants'
+import { BE_ENDPOINT } from './constants'
 
 const state = () => ({
   user: {},

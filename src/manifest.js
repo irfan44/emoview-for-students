@@ -1,7 +1,7 @@
 import { defineManifest } from '@crxjs/vite-plugin'
 
 export default defineManifest({
-  name: 'EmoView Student REST',
+  name: 'EmoSync for Student',
   description: 'An extension to recognize emotions on Google Meet using REST API',
   version: '1.0',
   manifest_version: 3,
